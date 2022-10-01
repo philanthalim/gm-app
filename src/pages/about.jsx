@@ -117,7 +117,7 @@ export default function About() {
            <Typography variant="h5" sx={{fontWeight:"bold",color:'#5C3E2A'}}>OUR STORY</Typography>
            <Typography variant="h5" sx={{marginTop:"20px",fontWeight:"bold"}}>We are building the economic infrastructure for the Internet. <br/>Businesses of every size.</Typography>
            <Box sx={{display:'flex', marginTop:"60px"}}>
-             <img style={{width:'90px'}} src="https://images.unsplash.com/photo-1512911268383-f74e84ff8496?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt=""/>
+             <img style={{width:'90px'}} src="https://images.unsplash.com/photo-1512911268383-f74e84ff8496?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="pic one"/>
              <Typography sx={{marginLeft:"20px"}} variant="h6">Molestie nunc non blandit massa enim. Etiam erat velit scelerisque in dictum non consectetur a. </Typography>
            </Box>
         </Box>
@@ -164,14 +164,14 @@ export default function About() {
           </Box>
         </Box>
         <Box sx={{width:'50%', marginLeft:"140px"}}>
-          <img style={{width:'470px', borderRadius:'20px'}} src="https://images.unsplash.com/photo-1512911268383-f74e84ff8496?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt=""/>
+          <img style={{width:'470px', borderRadius:'20px'}} src="https://images.unsplash.com/photo-1512911268383-f74e84ff8496?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="pic two"/>
         </Box>
     </Box>
 
 
     <Box sx={contentWrapper}>
         <Box sx={{width:'530px'}}>
-          <img style={{width:'470px', borderRadius:'20px'}} src="https://images.unsplash.com/photo-1512911268383-f74e84ff8496?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt=""/>
+          <img style={{width:'470px', borderRadius:'20px'}} src="https://images.unsplash.com/photo-1512911268383-f74e84ff8496?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="pic three"/>
         </Box>
         <Box sx={{width:'50%', marginLeft:"80px"}}>
           <Typography sx={{fontWeight:"bold",fontSize:"45px"}}>Our Vision</Typography>
@@ -202,7 +202,7 @@ export default function About() {
           return (
               <Box sx={listImg}>
                   <Card sx={teamCard}> 
-                   <img src={img} style={{width:'270px', height:'180px', borderRadius:'10px',marginTop:'20px'}}/>
+                   <img alt='team image' src={img} style={{width:'270px', height:'180px', borderRadius:'10px',marginTop:'20px'}}/>
                    <Typography sx={{position:"absolute", marginTop:"15%", fontWeight:"bold", fontSize:"24px"}}>Nancy Drew</Typography>
                    <Typography sx={{position:"absolute", marginTop:"17.4%", fontSize:"21px"}}>Developer</Typography>
                    <Box sx={iconBox}>

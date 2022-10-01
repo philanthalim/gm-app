@@ -36,7 +36,7 @@ export function Navbar() {
                           height: "80px", 
                           color: "common.black", 
                           display: { xs: "none", md: "flex" } }}>
-                    <img src="https://paperform.co/website/logo-v3/Paperform_Master_Black.png"/>
+                    <img src="https://paperform.co/website/logo-v3/Paperform_Master_Black.png" alt="logo"/>
                 </Box>
 
                 <Box sx={{display:'flex',
