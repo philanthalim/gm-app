@@ -108,7 +108,7 @@ export default function About() {
                       View Pricing
             </Button>
         </Box>
-     <img style={{borderRadius:"20px", width:'100%',height:'600px'}}
+     <img style={{borderRadius:"20px", width:'100%',height:'600px'}} alt="pic"
      src="https://images.unsplash.com/photo-1578500467296-441a11d5d55a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" />
     </Box>
 
@@ -202,7 +202,7 @@ export default function About() {
           return (
               <Box sx={listImg}>
                   <Card sx={teamCard}> 
-                   <img alt='team image' src={img} style={{width:'270px', height:'180px', borderRadius:'10px',marginTop:'20px'}}/>
+                   <img alt='team' src={img} style={{width:'270px', height:'180px', borderRadius:'10px',marginTop:'20px'}}/>
                    <Typography sx={{position:"absolute", marginTop:"15%", fontWeight:"bold", fontSize:"24px"}}>Nancy Drew</Typography>
                    <Typography sx={{position:"absolute", marginTop:"17.4%", fontSize:"21px"}}>Developer</Typography>
                    <Box sx={iconBox}>
