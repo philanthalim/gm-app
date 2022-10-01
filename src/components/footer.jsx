@@ -66,7 +66,7 @@ export default function Footer() {
             <Link sx={footerLink} href="#">Mumbai</Link>
           </Box>
         </Box>
-        <Box sx={{borderTop:"1px solid #d3d3d3", margin: "30px 85px 0px 85px", height:"70px", display:"flex", }}>
+        <Box sx={{borderTop:"1px solid #5C3E2A", margin: "30px 85px 0px 85px", height:"70px", display:"flex", }}>
             <Box sx={{display:"flex",marginTop:"20px", width: "100%"}}>
 
             
