@@ -1,7 +1,8 @@
-import {Card, Box, Paper, Toolbar, Typography, Container, Button, Link} from "@mui/material";
+import {Card, Box, Paper, Typography, Container, Button} from "@mui/material";
 import Footer from '../components/footer';
-import {useLocation} from 'react-router-dom';
+import {Navigate} from 'react-router-dom';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import { useSelector } from "react-redux";
 
 export default function About() {
     const bigBtn = {
@@ -78,7 +79,11 @@ export default function About() {
     }
    
     const imgArr = Array(6).fill('https://images.unsplash.com/photo-1512911268383-f74e84ff8496?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80') 
-    return <Paper sx={{
+
+    const {isAuthenticated} = useSelector((state) => state.user);
+    
+    if(isAuthenticated) {
+      return <Paper sx={{
         flexGrow: 1,
         display: 'flex',
         flexDirection: "column"
@@ -274,4 +279,8 @@ export default function About() {
         <Footer/>
         
     </Paper>;
+    } else {
+      return <Navigate replace to="/" />
+    }
+    
 }

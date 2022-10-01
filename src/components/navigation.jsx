@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
     AppBar,
     Box,
@@ -6,7 +6,9 @@ import {
     Container,
     Link,
     Toolbar,
+    Typography
 } from "@mui/material";
+import { useSelector } from "react-redux";
 
 export function Navbar() {
     
@@ -20,14 +22,8 @@ export function Navbar() {
       margin: "2px",
       color: "common.black",
     }
-    const [name,setName]=useState('')
-    useEffect(() => {
-        const getProfile = JSON.parse(localStorage.getItem("profile"));
-        // JSON.parse(localStorage.removeItem("profile"))
-        setName(getProfile?.user?.fname)
-        console.log(getProfile,'getProfile')
-      }, [name]);
     
+    const {username} = useSelector((state) => state.user);
 
     return <AppBar position="static" sx={{
         color: "common.white",
@@ -59,8 +55,9 @@ export function Navbar() {
                          justifyContent:'flex-end'}}>
                   <Box sx={{ alignItems:'center', 
                              marginRight:'25px',
+                             color:"common.black",
                              display: { xs: "none", md: "flex" }}}>
-                      {name? <div>name</div> : <Link href='/login' sx={{ color: "common.black", textDecoration: "none" }}>
+                      {username? <Typography>{username}</Typography> : <Link href='/login' sx={{textDecoration: "none", color:"black" }}>
                       Login
                     </Link> }
                   </Box>

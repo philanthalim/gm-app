@@ -1,13 +1,19 @@
-import {Box, Paper, Toolbar, Typography, Grid, FormControlLabel, 
-    Button, TextField} from "@mui/material";
-import React, { useEffect, useState } from "react";
+import {
+    Box,
+    Grid,
+    Button, 
+    TextField} from "@mui/material";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import {SET_USERNAME} from '../actions/user';
+import { useDispatch } from "react-redux";
 
 export default function Login() {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [password, setPassword]=useState('')
     const [username, setUsername]=useState('')
-    const navigate = useNavigate();
-
+    
     async function loginUser(credentials) {
         return fetch('https://www.melivecode.com/api/login', {
           method: 'POST',
@@ -26,10 +32,10 @@ export default function Login() {
             password,
             "expiresIn": 60000
           });
-          console.log(response,'rrr')
+ 
           if(response.status === 'ok'){
-            navigate("/about", { state: username })
-            localStorage.setItem('profile', JSON.stringify(response));
+            navigate("/about")
+            dispatch({ type: SET_USERNAME, payload: response.user.fname });
           } else {
              alert('Invalid username or password!')
           }
@@ -53,12 +59,11 @@ export default function Login() {
             <p>Log into your account</p>
           <Grid item >
             <TextField sx={{marginBottom:'20px'}} value={username} onChange={(e)=>
-                // console.log(e.target.value,'eee')
                 setUsername(e.target.value)
                 } required label="Username"></TextField>
           </Grid>
           <Grid item >
-            <TextField sx={{marginBottom:'20px'}} value={password} onChange={(e)=>setPassword(e.target.value)} required label="Password" type={'password'}></TextField>
+            <TextField sx={{marginBottom:'20px'}} minLength={8} value={password} onChange={(e)=>setPassword(e.target.value)} required label="Password" type={'password'}></TextField>
           </Grid>
           <Grid item >
             <Button type="submit" sx={{border: '1px solid', padding: '6px',
