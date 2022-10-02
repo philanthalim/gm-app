@@ -2,7 +2,8 @@ import {
     Box,
     Grid,
     Button, 
-    TextField} from "@mui/material";
+    TextField,
+    Typography} from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import {SET_USERNAME} from '../actions/user';
@@ -11,8 +12,9 @@ import { useDispatch } from "react-redux";
 export default function Login() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [password, setPassword]=useState('')
-    const [username, setUsername]=useState('')
+    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [error, setError] = useState(null);
     
     async function loginUser(credentials) {
         return fetch('https://www.melivecode.com/api/login', {
@@ -27,7 +29,13 @@ export default function Login() {
     
    async function handleSubmit (event) {
         event.preventDefault();
-        const response = await loginUser({
+        if(error){
+          setError(null)
+        }
+        if(password.length<8){
+          setError('Minimum 8 characters!')
+        } else {
+          const response = await loginUser({
             username,
             password,
             "expiresIn": 60000
@@ -39,6 +47,8 @@ export default function Login() {
           } else {
              alert('Invalid username or password!')
           }
+        }
+        
        
     };
   
@@ -64,6 +74,7 @@ export default function Login() {
           </Grid>
           <Grid item >
             <TextField sx={{marginBottom:'20px'}} minLength={8} value={password} onChange={(e)=>setPassword(e.target.value)} required label="Password" type={'password'}></TextField>
+            {error? <Typography sx={{color:"red"}}>{error}</Typography> : <div></div>}
           </Grid>
           <Grid item >
             <Button type="submit" sx={{border: '1px solid', padding: '6px',
